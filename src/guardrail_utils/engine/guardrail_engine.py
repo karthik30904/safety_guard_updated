@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import Any, Callable
 
-from guardrail_utils.config.settings import GuardrailSettings
+from guardrail_utils.core.config import GuardrailSettings
 from guardrail_utils.detectors.llm_detector import LLMDetector
 from guardrail_utils.engine.pipeline import GuardrailPipeline
 from guardrail_utils.guardrails.base import BaseGuardrail
@@ -20,7 +20,7 @@ from guardrail_utils.guardrails.technical.input_validation import InputValidatio
 from guardrail_utils.guardrails.technical.output_validation import OutputValidationGuardrail
 from guardrail_utils.guardrails.technical.performance_monitor import PerformanceMonitorGuardrail
 from guardrail_utils.guardrails.technical.robustness_check import RobustnessCheckGuardrail
-from guardrail_utils.llm_guardrails import (
+from guardrail_utils.guardrails.semantic import (
     SemanticBiasGuardrail,
     SemanticHallucinationGuardrail,
     SemanticJailbreakGuardrail,
@@ -29,8 +29,8 @@ from guardrail_utils.llm_guardrails import (
     SemanticResponseSafetyGuardrail,
     SemanticToxicityGuardrail,
 )
-from guardrail_utils.models.policy_result import PolicyResult
-from guardrail_utils.models.schemas import GuardrailStage
+from guardrail_utils.core.models import PolicyResult
+from guardrail_utils.core.models import GuardrailStage
 from guardrail_utils.monitoring.metrics import MetricsRegistry
 from guardrail_utils.monitoring.telemetry import TelemetrySink
 

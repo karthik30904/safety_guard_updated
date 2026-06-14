@@ -2,10 +2,11 @@
 
 from __future__ import annotations
 
-from guardrail_utils.core.config import GuardrailSettings
+from guardrail_utils.config.settings import GuardrailSettings
 from guardrail_utils.logging.logger import log_policy_event
-from guardrail_utils.core.models import GuardrailResult, PolicyResult
-from guardrail_utils.core.models import Action, GuardrailStatus, Severity
+from guardrail_utils.models.guardrail_result import GuardrailResult
+from guardrail_utils.models.policy_result import PolicyResult
+from guardrail_utils.models.schemas import Action, GuardrailStatus, Severity
 from guardrail_utils.scoring import RiskScorer
 from guardrail_utils.utils.helpers import estimate_tokens
 

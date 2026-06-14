@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from guardrail_utils.models.guardrail_result import GuardrailResult
-from guardrail_utils.models.schemas import Action, Severity
+from guardrail_utils.core.models import GuardrailResult
+from guardrail_utils.core.models import Action, Severity
 from guardrail_utils.utils.helpers import clamp_score
 
 

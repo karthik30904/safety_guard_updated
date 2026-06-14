@@ -5,7 +5,7 @@ from __future__ import annotations
 from typing import Callable
 
 from guardrail_utils.engine.guardrail_engine import GuardrailEngine
-from guardrail_utils.models.policy_result import PolicyResult
+from guardrail_utils.core.models import PolicyResult
 
 
 class GuardrailMiddleware:

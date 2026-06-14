@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from guardrail_utils.llm.base_client import BaseLLMClient
+from guardrail_utils.client.base_client import BaseLLMClient
 
 
 class AzureOpenAIClient(BaseLLMClient):

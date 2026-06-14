@@ -39,23 +39,23 @@ Existing imports remain supported:
 
 ```python
 from guardrail_utils.guardrails.base import BaseGuardrail
+from guardrail_utils.client import OpenAIClient, LLMFactory
 ```
 
 ## Project Structure
 
 ```text
 guardrail_utils/
-  config/          Runtime settings and config loading
-  detectors/       Regex, keyword, embedding-like, and LLM detector adapters
-  engine/          Engine, pipeline, and middleware helpers
-  guardrails/      Technical, security, and ethical guardrail implementations
-  llm/             OpenAI, Azure OpenAI, Bedrock clients, and factory
-  llm_guardrails/  Semantic LLM-backed guardrails
-  logging/         Central logging helpers
-  models/          Pydantic result and context models
-  monitoring/      Metrics, telemetry, and tracing helpers
-  policies/        Policy manager and compatibility policy wrappers
-  utils/           Small shared helpers
+  core/                 Core guardrail runtime (config, models, detectors, policies)
+  client/               LLM provider clients (OpenAI, Azure, Bedrock, factory)
+  guardrails/           Guardrail implementations (technical, security, ethical, semantic)
+  engine/               Engine, pipeline, and middleware
+  detectors/            Detection primitives (shims to core)
+  models/               Pydantic schemas (shims to core)
+  logging/              Central logging
+  monitoring/           Metrics and telemetry
+  policies/             Policy managers (shims to core)
+  utils/                Utility helpers (shims to core)
 ```
 
 ## Input Flow
@@ -67,6 +67,14 @@ guardrail_utils/
 5. `PolicyManager` combines all results into one `PolicyResult`.
 
 If a guardrail blocks input, the final text becomes the configured blocked response.
+
+## Documentation
+
+- **[Quick Start](docs/1_quickstart.md)** – Get running in 5 minutes with basic examples
+- **[Architecture](docs/2_architecture.md)** – Understand the package design and data flow
+- **[Workflow & Advanced Usage](docs/3_workflow.md)** – Multi-stage pipelines, async, custom guardrails, middleware
+- **[Guardrails Guide](docs/4_guardrails.md)** – Complete reference for all guardrails with examples
+
 
 ## Output Flow
 
@@ -81,6 +89,9 @@ Deterministic guardrails catch clear patterns. LLM guardrails add semantic class
 LLM guardrails use a small provider-neutral client contract:
 
 ```python
+from guardrail_utils.client import LLMFactory
+from guardrail_utils import GuardrailEngine
+
 client = LLMFactory.create("openai")
 engine = GuardrailEngine(llm_client=client)
 ```

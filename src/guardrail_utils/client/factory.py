@@ -4,10 +4,10 @@ from __future__ import annotations
 
 from typing import Any
 
-from guardrail_utils.llm.azure_openai_client import AzureOpenAIClient
-from guardrail_utils.llm.bedrock_client import BedrockClient
-from guardrail_utils.llm.base_client import BaseLLMClient
-from guardrail_utils.llm.openai_client import OpenAIClient
+from guardrail_utils.client.azure_openai_client import AzureOpenAIClient
+from guardrail_utils.client.bedrock_client import BedrockClient
+from guardrail_utils.client.base_client import BaseLLMClient
+from guardrail_utils.client.openai_client import OpenAIClient
 
 
 class LLMFactory:

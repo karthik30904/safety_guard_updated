@@ -8,8 +8,8 @@ from pathlib import Path
 
 import pytest
 
-from guardrail_utils.llm.base_client import BaseLLMClient
-from guardrail_utils.llm.factory import LLMFactory
+from guardrail_utils.client.base_client import BaseLLMClient
+from guardrail_utils.client.factory import LLMFactory
 from guardrail_utils.logging.logger import get_logger, log_policy_event
 
 

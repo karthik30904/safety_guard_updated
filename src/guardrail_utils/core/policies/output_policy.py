@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from guardrail_utils.core.config import GuardrailSettings
+from guardrail_utils.config.settings import GuardrailSettings
 from guardrail_utils.policies.policy_manager import PolicyManager
 
 

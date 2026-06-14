@@ -5,12 +5,11 @@ from __future__ import annotations
 import asyncio
 from time import perf_counter
 
-from guardrail_utils.config.settings import GuardrailSettings
+from guardrail_utils.core.config import GuardrailSettings
 from guardrail_utils.guardrails.base import BaseGuardrail
 from guardrail_utils.logging.logger import get_logger
-from guardrail_utils.models.guardrail_result import GuardrailResult
-from guardrail_utils.models.policy_result import PolicyResult
-from guardrail_utils.models.schemas import Action, GuardrailContext, GuardrailStage
+from guardrail_utils.core.models import GuardrailResult, PolicyResult
+from guardrail_utils.core.models import Action, GuardrailContext, GuardrailStage
 from guardrail_utils.policies.policy_manager import PolicyManager
 
 logger = get_logger("guardrail_utils.pipeline")

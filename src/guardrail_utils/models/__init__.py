@@ -1,8 +1,16 @@
 """Public model exports for guardrail results and schemas."""
 
-from guardrail_utils.models.guardrail_result import GuardrailResult
-from guardrail_utils.models.policy_result import PolicyResult
-from guardrail_utils.models.schemas import Action, Detection, GuardrailContext, GuardrailStage, GuardrailStatus, Severity
+"""Models (shim to core.models)."""
+
+from guardrail_utils.core.models import GuardrailResult, PolicyResult
+from guardrail_utils.core.models import (
+    Action,
+    Detection,
+    GuardrailContext,
+    GuardrailStage,
+    GuardrailStatus,
+    Severity,
+)
 
 __all__ = [
     "Action",

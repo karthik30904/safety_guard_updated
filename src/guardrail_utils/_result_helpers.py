@@ -9,8 +9,8 @@ from __future__ import annotations
 
 from collections.abc import Iterable
 
-from guardrail_utils.models.guardrail_result import GuardrailResult
-from guardrail_utils.models.schemas import Action, Detection, GuardrailStatus, Severity
+from guardrail_utils.core.models import GuardrailResult
+from guardrail_utils.core.models import Action, Detection, GuardrailStatus, Severity
 
 
 _SEVERITY_ORDER = {severity: index for index, severity in enumerate(Severity)}

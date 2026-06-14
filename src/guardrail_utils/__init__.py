@@ -8,8 +8,8 @@ from guardrail_utils.guardrails.security.hallucination_detection import Hallucin
 from guardrail_utils.guardrails.security.jailbreak_detection import JailbreakDetectionGuardrail
 from guardrail_utils.guardrails.security.pii_detection import PIIDetectionGuardrail
 from guardrail_utils.guardrails.security.prompt_injection import PromptInjectionGuardrail
-from guardrail_utils.llm import AzureOpenAIClient, BaseLLMClient, BedrockClient, LLMFactory, OpenAIClient
-from guardrail_utils.llm_guardrails import (
+from guardrail_utils.client import AzureOpenAIClient, BaseLLMClient, BedrockClient, LLMFactory, OpenAIClient
+from guardrail_utils.guardrails.semantic import (
     LLMGuardrail,
     SemanticBiasGuardrail,
     SemanticHallucinationGuardrail,
